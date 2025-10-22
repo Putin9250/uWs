@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Logo from "../SVG/4.svg";
-import MenuOpen from "../SVG/5.svg";
+import MenuOpen from "../SVG/7.svg";
 import MenuClose from "../SVG/6.svg";
 import { FaHome, FaCog, FaUser, FaPhone } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
@@ -140,7 +140,8 @@ export default function Navbar() {
             <img
               src={mobileOpen ? MenuClose : MenuOpen}
               alt="Menu Toggle"
-              className="w-8 h-8"
+              className="w-8 h-8" 
+              
             />
           </button>
         </div>
