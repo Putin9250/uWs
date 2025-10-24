@@ -9,29 +9,6 @@ export default function Navbar() {
   const [openCard, setOpenCard] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const menuItems = [
-    { label: "Home", icon: <FaHome />, href: "#" },
-    {
-      label: "Services",
-      icon: <FaCog />,
-      content: [
-        { desc: "Web Development" },
-        { desc: "UI/UX Design" },
-        { desc: "Business Development" },
-        { desc: "WordPress Dev" },
-        { desc: "Site Management" },
-        { desc: "Digital Marketing" },
-        { desc: "SEO & LOGO" },
-
-      ],
-    },
-    {
-      label: "About",
-      icon: <FaUser />,
-      content: [{ title: "Team", desc: "Meet our experts" }],
-    },
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.25, ease: "easeOut" } },
@@ -64,68 +41,88 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-10 font-semibold text-white">
-          {menuItems.map((item) => (
-            <li
-              key={item.label}
-              className="relative"
-              onMouseEnter={() => item.content && setOpenCard(item.label)}
-              onMouseLeave={() => item.content && setOpenCard(null)}
-            >
-              {item.href ? (
-                <a
-                  href={item.href}
-                  className="flex items-center gap-2 hover:scale-110 transition-transform"
+          <li>
+            <a href="#Home" className="flex items-center gap-2 hover:scale-110 transition-transform">
+              <FaHome /> Home
+            </a>
+          </li>
+
+          <li
+            className="relative"
+            onMouseEnter={() => setOpenCard("Services")}
+            onMouseLeave={() => setOpenCard(null)}
+          >
+            <button className="flex items-center gap-2 hover:scale-110 transition-transform">
+              <FaCog /> Services
+            </button>
+            <AnimatePresence>
+              {openCard === "Services" && (
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="absolute top-full left-1/2 -translate-x-1/2 bg-gradient-to-br from-purple-700 to-pink-500 text-white rounded-xl shadow-2xl p-4 w-64"
                 >
-                  {item.icon} {item.label}
-                </a>
-              ) : (
-                <button className="flex items-center gap-2 hover:scale-110 transition-transform">
-                  {item.icon} {item.label}
-                </button>
-              )}
-
-              {item.content && (
-                <AnimatePresence>
-                  {openCard === item.label && (
-                    <motion.div
-                      variants={containerVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      className="absolute top-full left-1/2 -translate-x-1/2 bg-gradient-to-br from-purple-700 to-pink-500 text-white rounded-xl shadow-2xl p-4 w-64"
+                  {[
+                    { desc: "Web Development", href2: "#sec" },
+                    { desc: "UI/UX Design", href2: "#uiux" },
+                    { desc: "Business Development", href2: "#business" },
+                    { desc: "WordPress Dev", href2: "#wordpress" },
+                    { desc: "Site Management", href2: "#management" },
+                    { desc: "Digital Marketing", href2: "#marketing" },
+                    { desc: "SEO & LOGO", href2: "#seo" },
+                  ].map((c, idx) => (
+                    <motion.a
+                      key={idx}
+                      href={c.href2}
+                      variants={itemVariants}
+                      className="block mb-3 last:mb-0 text-sm text-white/80 hover:text-white hover:scale-105 transition-transform cursor-pointer"
                     >
-                      <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        exit="hidden"
-                        variants={{
-                          hidden: { opacity: 0 },
-                          visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
-                        }}
-                      >
-                        {item.content.map((c, idx) => (
-                          <motion.div
-                            key={idx}
-                            variants={itemVariants}
-                            className="mb-3 last:mb-0"
-                          >
-                            {c.title && (
-                              <h4 className="font-bold text-lg cursor-pointer">{c.title}</h4>
-                            )}
-                            <p className="text-sm text-white/80 transition-transform hover:scale-105 cursor-pointer">
-                              {c.desc}
-                            </p>
-                          </motion.div>
-                        ))}
-                      </motion.div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                      {c.desc}
+                    </motion.a>
+                  ))}
+                </motion.div>
               )}
-            </li>
-          ))}
+            </AnimatePresence>
+          </li>
 
-          {/* Call Button */}
+          <li
+            className="relative"
+            onMouseEnter={() => setOpenCard("About")}
+            onMouseLeave={() => setOpenCard(null)}
+          >
+            <button className="flex items-center gap-2 hover:scale-110 transition-transform">
+              <FaUser /> About
+            </button>
+            <AnimatePresence>
+              {openCard === "About" && (
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="absolute top-full left-1/2 -translate-x-1/2 bg-gradient-to-br from-purple-700 to-pink-500 text-white rounded-xl shadow-2xl p-4 w-64"
+                >
+                  <motion.a
+                    href="#Mission"
+                    variants={itemVariants}
+                    className="block text-sm text-white/80 hover:text-white hover:scale-105 transition-transform cursor-pointer"
+                  >
+                    Our Mission
+                  </motion.a>
+                  <motion.a
+                    href="#Team"
+                    variants={itemVariants}
+                    className="block text-sm text-white/80 hover:text-white hover:scale-105 transition-transform cursor-pointer"
+                  >
+                    Meet our experts
+                  </motion.a>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </li>
+
           <a
             href="#"
             className="ml-4 w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-r from-cyan-400 to-pink-400 shadow-lg hover:shadow-2xl hover:scale-110 transition-transform text-black"
@@ -140,8 +137,7 @@ export default function Navbar() {
             <img
               src={mobileOpen ? MenuClose : MenuOpen}
               alt="Menu Toggle"
-              className="w-8 h-8" 
-              
+              className="w-8 h-8"
             />
           </button>
         </div>
@@ -151,58 +147,114 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden mt-4 bg-black/40 backdrop-blur-lg rounded-xl p-4 flex flex-col gap-4"
+            key="mobile-menu"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="md:hidden mt-4 bg-black/50 backdrop-blur-lg rounded-xl overflow-hidden"
           >
-            {menuItems.map((item) => (
-              <div key={item.label}>
+            <ul className="flex flex-col gap-3 p-4 text-white font-semibold">
+              <li>
+                <a
+                  href="#Home"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-cyan-400 transition"
+                >
+                  <FaHome /> Home
+                </a>
+              </li>
+
+              <li>
                 <button
-                  className="flex items-center justify-between w-full text-white font-semibold hover:text-cyan-400 transition"
                   onClick={() =>
-                    item.content &&
-                    setOpenCard(openCard === item.label ? null : item.label)
+                    setOpenCard(openCard === "Services" ? null : "Services")
                   }
+                  className="flex items-center justify-between w-full hover:text-cyan-400 transition"
                 >
                   <span className="flex items-center gap-2">
-                    {item.icon} {item.label}
+                    <FaCog /> Services
                   </span>
-                  <span>{item.content ? (openCard === item.label ? "-" : "+") : ""}</span>
+                  <span>{openCard === "Services" ? "-" : "+"}</span>
                 </button>
 
-                {item.content && (
-                  <AnimatePresence>
-                    {openCard === item.label && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="mt-2 flex flex-col gap-2 pl-4"
-                      >
-                        {item.content.map((c, idx) => (
-                          <div key={idx}>
-                            {c.title && <h4 className="font-semibold text-white">{c.title}</h4>}
-                            <p className="text-white/80 text-sm">{c.desc}</p>
-                          </div>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                )}
-              </div>
-            ))}
+                <AnimatePresence>
+                  {openCard === "Services" && (
+                    <motion.ul
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="pl-6 mt-2 flex flex-col gap-2 text-sm text-white/80"
+                    >
+                      <li><a href="#sec" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">Web Development</a></li>
+                      <li><a href="#uiux" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">UI/UX Design</a></li>
+                      <li><a href="#business" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">Business Development</a></li>
+                      <li><a href="#wordpress" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">WordPress Dev</a></li>
+                      <li><a href="#management" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">Site Management</a></li>
+                      <li><a href="#marketing" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">Digital Marketing</a></li>
+                      <li><a href="#seo" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">SEO & LOGO</a></li>
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+              </li>
 
-            <a
-              href="#"
-              className="w-full py-3 rounded-full flex items-center justify-center bg-gradient-to-r from-cyan-400 to-pink-400 shadow-lg hover:scale-105 text-black font-semibold"
-            >
-              <span className="flex items-center gap-2">
-                <FaPhone /> Call Now
-              </span>
-            </a>
+              <li>
+                <button
+                  onClick={() =>
+                    setOpenCard(openCard === "About" ? null : "About")
+                  }
+                  className="flex items-center justify-between w-full hover:text-cyan-400 transition"
+                >
+                  <span className="flex items-center gap-2">
+                    <FaUser /> About
+                  </span>
+                  <span>{openCard === "About" ? "-" : "+"}</span>
+                </button>
+
+                <AnimatePresence>
+                  {openCard === "About" && (
+                    <motion.ul
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="pl-6 mt-2 flex flex-col gap-2 text-sm text-white/80"
+                    >
+                      <li>
+                        <a
+                          href="#Mission"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          Our Mission
+                        </a>
+                        
+                      </li>
+                      <li>
+                        <a
+                          href="#team"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          Meet our experts
+                        </a>
+                      </li>
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+              </li>
+
+              <li>
+                <a
+                  href="#"
+                  onClick={() => setMobileOpen(false)}
+                  className="w-full py-3 rounded-full flex items-center justify-center bg-gradient-to-r from-cyan-400 to-pink-400 shadow-lg hover:scale-105 text-black font-semibold transition"
+                >
+                  <FaPhone /> Call Now
+                </a>
+              </li>
+            </ul>
           </motion.div>
         )}
       </AnimatePresence>

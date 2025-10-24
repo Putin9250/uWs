@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Orbitron:wght@700&display=swap');
+
+html {
+  scroll-padding-top: 80px; /* height of your sticky navbar */
+  scroll-behavior: smooth;
+}

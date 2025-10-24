@@ -3,7 +3,10 @@ import ComputerSVG from "../SVG/conputer.svg";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100vh] flex flex-col items-center justify-center bg-gradient-to-br from-[#0e0f1a] via-[#141628] to-[#1c1f36] text-white overflow-hidden px-4 pt-20 md:pt-0">
+    <section
+      className="relative  min-h-[100vh] flex flex-col items-center justify-center bg-gradient-to-br from-[#0e0f1a] via-[#141628] to-[#1c1f36] text-white overflow-hidden px-4 pt-20 md:pt-0"
+      id="Home"
+    >
       {/* Floating Computer */}
       <motion.div
         initial={{ opacity: 0, x: 50 }}
@@ -166,7 +169,8 @@ export default function Hero() {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/50 text-xs sm:text-sm"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/50 text-xs sm:text-sm cursor-pointer"
+        id="About"
       >
         ↓ Scroll to explore
       </motion.div>
