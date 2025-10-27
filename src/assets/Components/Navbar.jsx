@@ -2,7 +2,16 @@ import { useState } from "react";
 import Logo from "../SVG/4.svg";
 import MenuOpen from "../SVG/7.svg";
 import MenuClose from "../SVG/6.svg";
-import { FaHome, FaCog, FaUser, FaPhone } from "react-icons/fa";
+import {
+  FaHome,
+  FaCog,
+  FaUser,
+  FaPhone,
+  FaLayerGroup,
+  FaShapes,
+  FaUserAstronaut,
+  FaTools,
+} from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
@@ -11,8 +20,16 @@ export default function Navbar() {
 
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.25, ease: "easeOut" } },
-    exit: { opacity: 0, scale: 0.95, transition: { duration: 0.2, ease: "easeIn" } },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.25, ease: "easeOut" },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.95,
+      transition: { duration: 0.2, ease: "easeIn" },
+    },
   };
 
   const itemVariants = {
@@ -30,7 +47,11 @@ export default function Navbar() {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-1">
-          <img src={Logo} alt="Logo" className="h-6 sm:h-8 md:h-10 w-auto cursor-cell" />
+          <img
+            src={Logo}
+            alt="Logo"
+            className="h-6 sm:h-8 md:h-10 w-auto cursor-cell"
+          />
           <span
             className="cursor-help text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-pink-500"
             style={{ fontFamily: "Dancing Script, cursive" }}
@@ -40,9 +61,12 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-10 font-semibold text-white">
+        <ul className="hidden md:flex items-center gap-6 lg:gap-10 font-semibold text-white text-sm md:text-base lg:text-lg">
           <li>
-            <a href="#Home" className="flex items-center gap-2 hover:scale-110 transition-transform">
+            <a
+              href="#Home"
+              className="flex items-center gap-2 hover:scale-110 transition-transform"
+            >
               <FaHome /> Home
             </a>
           </li>
@@ -53,7 +77,7 @@ export default function Navbar() {
             onMouseLeave={() => setOpenCard(null)}
           >
             <button className="flex items-center gap-2 hover:scale-110 transition-transform">
-              <FaCog /> Services
+              <FaTools /> Services
             </button>
             <AnimatePresence>
               {openCard === "Services" && (
@@ -65,13 +89,20 @@ export default function Navbar() {
                   className="absolute top-full left-1/2 -translate-x-1/2 bg-gradient-to-br from-purple-700 to-pink-500 text-white rounded-xl shadow-2xl p-4 w-64"
                 >
                   {[
-                    { desc: "Web Development", href2: "#sec" },
-                    { desc: "UI/UX Design", href2: "#uiux" },
-                    { desc: "Business Development", href2: "#business" },
-                    { desc: "WordPress Dev", href2: "#wordpress" },
-                    { desc: "Site Management", href2: "#management" },
-                    { desc: "Digital Marketing", href2: "#marketing" },
-                    { desc: "SEO & LOGO", href2: "#seo" },
+                    { desc: "Web Development", href2: "#Services" },
+                    { desc: "UI/UX Design", href2: "#Services" },
+                    {
+                      desc: "Google Map Listing",
+                      href2: "#Services",
+                    },
+                    {
+                      desc: "Business Development",
+                      href2: "#Services",
+                    },
+                    { desc: "WordPress Dev", href2: "#Services" },
+                    { desc: "Site Management", href2: "#Services" },
+                    { desc: "Digital Marketing", href2: "#Services" },
+                    { desc: "SEO & LOGO", href2: "#Services" },
                   ].map((c, idx) => (
                     <motion.a
                       key={idx}
@@ -93,7 +124,7 @@ export default function Navbar() {
             onMouseLeave={() => setOpenCard(null)}
           >
             <button className="flex items-center gap-2 hover:scale-110 transition-transform">
-              <FaUser /> About
+              <FaUserAstronaut /> About
             </button>
             <AnimatePresence>
               {openCard === "About" && (
@@ -122,7 +153,14 @@ export default function Navbar() {
               )}
             </AnimatePresence>
           </li>
-
+          <li>
+            <a
+              href="#PortFolio"
+              className="flex items-center gap-2 hover:scale-110 transition-transform"
+            >
+              <FaShapes /> Portfolio
+            </a>
+          </li>
           <a
             href="#"
             className="ml-4 w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-r from-cyan-400 to-pink-400 shadow-lg hover:shadow-2xl hover:scale-110 transition-transform text-black"
@@ -187,13 +225,80 @@ export default function Navbar() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="pl-6 mt-2 flex flex-col gap-2 text-sm text-white/80"
                     >
-                      <li><a href="#sec" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">Web Development</a></li>
-                      <li><a href="#uiux" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">UI/UX Design</a></li>
-                      <li><a href="#business" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">Business Development</a></li>
-                      <li><a href="#wordpress" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">WordPress Dev</a></li>
-                      <li><a href="#management" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">Site Management</a></li>
-                      <li><a href="#marketing" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">Digital Marketing</a></li>
-                      <li><a href="#seo" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">SEO & LOGO</a></li>
+                      <li>
+                        <a
+                          href="#Services"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          Web Development
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#UIUX"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          UI/UX Design
+                        </a>
+                      </li>
+                      
+                      <li>
+                        <a
+                          href="#Business-Devlopment"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          Business Development
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#CMS-Services"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          WordPress Dev
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#Site-Managment"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          Site Management
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#Digital-Marketing"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          Digital Marketing
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#SEO-LOGO"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          SEO & LOGO
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#Google-map-listing"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          {" "}
+                          Google Maps Listing
+                        </a>
+                      </li>
                     </motion.ul>
                   )}
                 </AnimatePresence>
@@ -223,13 +328,12 @@ export default function Navbar() {
                     >
                       <li>
                         <a
-                          href="#Mission"
+                          href="#mission"
                           onClick={() => setMobileOpen(false)}
                           className="hover:text-cyan-400"
                         >
                           Our Mission
                         </a>
-                        
                       </li>
                       <li>
                         <a
@@ -244,7 +348,15 @@ export default function Navbar() {
                   )}
                 </AnimatePresence>
               </li>
-
+              <li>
+                <a
+                  href="#PortFolio"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:scale-110 transition-transform"
+                >
+                  <FaShapes /> Portfolio
+                </a>
+              </li>
               <li>
                 <a
                   href="#"

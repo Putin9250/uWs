@@ -1,16 +1,24 @@
 import About from "./assets/Components/About";
 import Hero from "./assets/Components/Hero";
 import Navbar from "./assets/Components/Navbar";
+import AdSection from "./assets/Components/ad";
+import Services from "./assets/Components/Services";
+import Testimonials from "./assets/Components/Testimonials";
+import Portfolio from "./assets/Components/Portfolio";
 
 function App() {
 
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <Hero />
+      <AdSection />
       <About />
+      <Testimonials />
+      <Services />
+      <Portfolio />
       {/* Test Sections */}
-       <div id="sec" className="h-screen bg-purple-600 flex items-center justify-center">
+       <div id="" className="h-screen bg-purple-600 flex items-center justify-center">
         <h1 className="text-white text-4xl font-bold">Section 1</h1>
       </div>
 
