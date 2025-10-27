@@ -282,7 +282,7 @@ export default function Navbar() {
                       </li>
                       <li>
                         <a
-                          href="#SEO-LOGO"
+                          href="#MAP"
                           onClick={() => setMobileOpen(false)}
                           className="hover:text-cyan-400"
                         >
@@ -291,7 +291,7 @@ export default function Navbar() {
                       </li>
                       <li>
                         <a
-                          href="#Google-map-listing"
+                          href="#MAP"
                           onClick={() => setMobileOpen(false)}
                           className="hover:text-cyan-400"
                         >
