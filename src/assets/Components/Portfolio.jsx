@@ -1,48 +1,55 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import Photo1 from "../Photos/1.png";
+import Photo2 from "../Photos/2.png";
+import Photo3 from "../Photos/3.png";
+import Photo4 from "../Photos/4.png";
+import Photo5 from "../Photos/5.png";
+import Photo6 from "../Photos/6.png";
+
 
 const projects = [
   {
-    title: "Aurora Agency",
-    desc: "A sleek digital agency landing page with smooth animations and responsive design.",
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
-    git: "https://github.com/yourusername/aurora-agency",
-    live: "https://aurora-agency.netlify.app",
+    title: "Fanta Product Website",
+    desc: "An elegant e-commerce frontend built with clean UI.",
+    img: Photo3,
+    git: "https://github.com/Putin9250/Fanta.com",
+    live: "https://legendary-stardust-fe9a5c.netlify.app/",
   },
   {
-    title: "ZenCart",
-    desc: "An elegant e-commerce frontend built with clean UI and fluid transitions.",
-    img: "https://images.unsplash.com/photo-1607083206968-13611e3b7b2d?auto=format&fit=crop&w=900&q=80",
-    git: "https://github.com/yourusername/zencart",
-    live: "https://zencart-demo.netlify.app",
+    title: "PortFolio",
+    desc: "Personal portfolio website showcasing skills and projects.",
+    img: Photo2,
+    git: "https://github.com/Putin9250/Deepanshu2",
+    live: "https://putin9250.github.io/Deepanshu2/",
   },
   {
-    title: "VisionCraft",
-    desc: "Portfolio site showcasing creative visuals and animated scroll effects.",
-    img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
-    git: "https://github.com/yourusername/visioncraft",
-    live: "https://visioncraft-site.netlify.app",
+    title: "Apple Device Service Center",
+    desc: "Fast and reliable smartphone services for all major brands and issues.",
+    img: Photo6,
+    git: "https://iresqindia.com/",
+    live: "https://iresqindia.com/",
   },
   {
-    title: "MarketLink",
+    title: "Odyssey of Vladimir Putin",
     desc: "Landing page for a marketing startup with a minimal white and blue palette.",
-    img: "https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=900&q=80",
-    git: "https://github.com/yourusername/marketlink",
-    live: "https://marketlink-digital.netlify.app",
+    img: Photo4,
+    git: "https://github.com/Putin9250/Odyssey-of-Vladimir-Putin",
+    live: "https://putin9250.github.io/Odyssey-of-Vladimir-Putin/",
   },
   {
-    title: "EduNova",
+    title: "University Website",
     desc: "Modern educational platform UI featuring responsive cards and motion effects.",
-    img: "https://images.unsplash.com/photo-1579389083046-e3df9c2b0844?auto=format&fit=crop&w=900&q=80",
-    git: "https://github.com/yourusername/edunova",
-    live: "https://edunova-platform.netlify.app",
+    img: Photo5,
+    git: "https://github.com/Putin9250/University",
+    live: "https://putin9250.github.io/University/",
   },
   {
     title: "FitCore",
     desc: "Gym and fitness web app design focused on strength, simplicity, and speed.",
-    img: "https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=900&q=80",
-    git: "https://github.com/yourusername/fitcore",
-    live: "https://fitcore-fitness.netlify.app",
+    img: Photo1,
+    git: "https://github.com/Putin9250/FinalRoundFightClub",
+    live: "https://putin9250.github.io/FinalRoundFightClub/",
   },
 ];
 
@@ -59,13 +66,35 @@ export default function Portfolio() {
         viewport={{ once: true }}
         className="text-center mb-14"
       >
-        <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-          Our Portfolio
-        </h2>
-        <p className="text-gray-600 text-lg sm:text-xl max-w-2xl mx-auto">
-          A glimpse into our creations — websites that connect, inspire, and
+        <motion.h2
+                  initial={{ opacity: 0, y: -40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 60,
+                    damping: 15,
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="text-3xl md:text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent"
+                >
+                  Our Portfolio
+                </motion.h2>
+        
+                <motion.p
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 0.2,
+                    type: "spring",
+                    stiffness: 50,
+                    damping: 15,
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="text-gray-500 text-sm md:text-base"
+                >
+                  A glimpse into our creations — websites that connect, inspire, and
           grow businesses.
-        </p>
+                </motion.p>
       </motion.div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -86,7 +115,7 @@ export default function Portfolio() {
               <img
                 src={project.img}
                 alt={project.title}
-                className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-60 object-contain group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-6">
                 <a
@@ -110,15 +139,19 @@ export default function Portfolio() {
               </div>
             </div>
             <div className="p-6">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-2xl text-ellipsis font-semibold text-gray-900 mb-2">
                 {project.title}
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 {project.desc}
               </p>
             </div>
+            
           </motion.div>
+          
         ))}
+      <div id="Team"></div>
+
       </div>
     </section>
   );

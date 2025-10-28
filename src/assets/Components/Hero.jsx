@@ -103,9 +103,14 @@ export default function Hero() {
       {/* Main Content */}
       <div className="relative z-10 max-w-3xl text-center px-2 sm:px-6">
         <motion.h1
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 60,
+            damping: 15,
+          }}
+          viewport={{ once: false, amount: 0.3 }}
           className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-3"
         >
           We Build <span className="text-blue-400">Digital Growth</span> That
@@ -113,9 +118,15 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.2,
+            type: "spring",
+            stiffness: 50,
+            damping: 15,
+          }}
+          viewport={{ once: false, amount: 0.3 }}
           className="text-white/80 text-sm sm:text-base mb-6 sm:mb-8"
         >
           From website design to brand strategy — we craft meaningful digital
@@ -124,53 +135,74 @@ export default function Hero() {
 
         {/* Buttons */}
         <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-6 sm:mb-10"
-        >
-          <button className="bg-blue-500 hover:bg-blue-600 transition-all duration-300 text-white rounded-full px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-lg shadow-lg hover:scale-105">
-            Get Started
-          </button>
-          <button className="border border-white/40 text-white hover:bg-white/10 transition-all duration-300 rounded-full px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-lg hover:scale-105">
-            View Work
-          </button>
-        </motion.div>
+  initial={{ y: 60, opacity: 0 }}                // Start slightly below
+  whileInView={{ y: 0, opacity: 1 }}             // Slide upward & fade in
+  transition={{ duration: 0.8, ease: "easeOut" }} // Smooth motion
+  viewport={{ once: false, amount: 0.3 }}         // Triggers on scroll each time
+  className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-6 sm:mb-10"
+><a href="#Started">
+  <motion.button
+    whileHover={{ scale: 1.08 }}
+    whileTap={{ scale: 0.96 }}
+    className="bg-blue-500 cursor-pointer hover:bg-blue-600 transition-all duration-300 text-white rounded-full px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-lg shadow-lg"
+  >
+    Get Started
+  </motion.button>
+</a>
+<a href="#PortFolio">
+  <motion.button
+    whileHover={{ scale: 1.08 }}
+    whileTap={{ scale: 0.96 }}
+    className="border cursor-pointer border-white/40 text-white hover:bg-white/10 transition-all duration-300 rounded-full px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-lg shadow-lg"
+  >
+    View Work
+  </motion.button>
+  </a>
+</motion.div>
+
 
         {/* Quick Highlights */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white/70 text-xs  sm:text-sm md:text-base"
-        >
-          <div>
-            <span className="text-blue-400 text-lg sm:text-xl font-semibold">
-              50+
-            </span>{" "}
-            Projects
-          </div>
-          <div>
-            <span className="text-blue-400 text-lg sm:text-xl font-semibold">
-              100%
-            </span>{" "}
-            Client Trust
-          </div>
-          <div>
-            <span className="text-blue-400 text-lg sm:text-xl font-semibold">
-              24/7
-            </span>{" "}
-            Support
-          </div>
-        </motion.div>
+  initial={{ y: 40, opacity: 0 }}                 // Start slightly below
+  whileInView={{ y: 0, opacity: 1 }}              // Rise into view
+  transition={{ duration: 0.8, ease: "easeOut" }} // Smooth motion
+  viewport={{ once: false, amount: 0.3 }}         // Trigger while scrolling
+  className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white/70 text-xs sm:text-sm md:text-base"
+>
+  {[
+    { number: "50+", label: "Projects" },
+    { number: "100%", label: "Client Trust" },
+    { number: "24/7", label: "Support" },
+  ].map((item, index) => (
+    <motion.div
+      key={index}
+      initial={{ y: 30, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.2, // ✨ each one follows the other slightly
+        ease: "easeOut",
+      }}
+      viewport={{ once: false, amount: 0.3 }}
+      className="flex flex-col items-center sm:items-start"
+    >
+      <span className="text-blue-400 text-lg sm:text-xl font-semibold">
+        {item.number}
+      </span>
+      {item.label}
+    </motion.div>
+  ))}
+</motion.div>
+
       </div>
 
       {/* Scroll Indicator */}
       <motion.div
+      
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
         className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/50 text-xs sm:text-sm cursor-pointer"
-        id="About"
+        id="Started"
       >
         ↓ Scroll to explore
       </motion.div>

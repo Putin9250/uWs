@@ -102,12 +102,13 @@ function ServiceCard({ service, index }) {
       </p>
 
       {/* Link */}
+      <a href="#Contact">
       <motion.span
         whileHover={{ x: 6 }}
         className="relative text-sm text-blue-400 underline underline-offset-4 cursor-pointer group-hover:text-pink-400 transition-all duration-300"
       >
         Learn More →
-      </motion.span>
+      </motion.span></a>
     </motion.div>
   );
 }
@@ -138,10 +139,10 @@ export default function Services() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: false }}
-        className="text-4xl md:text-5xl font-bold text-center mb-14 tracking-wide"
+        className="text-4xl md:text-5xl font-bold text-white mb-3"
       >
         Our{" "}
-        <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent">
+        <span className="text-4xl md:text-5xl font-bold text-blue-400 mb-3">
           Services
         </span>
       </motion.h2>

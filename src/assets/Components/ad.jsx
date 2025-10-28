@@ -30,7 +30,7 @@ export default function AdSection() {
           </p>
 
           <motion.a
-            href="#Services"
+            href="#Contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block bg-gradient-to-r from-cyan-500 to-pink-500 text-white font-semibold py-3 px-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"

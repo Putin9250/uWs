@@ -3,13 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Testimonials() {
   const testimonials = [
-    {
-      quote:
-        "Their designs whisper elegance and logic. Every interface feels alive — crafted for both heart and hand.",
-      name: "Sarah Chen",
-      designation: "Product Manager at TechFlow",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80",
-    },
+    
     {
       quote:
         "A journey of creativity and trust — they didn’t just build a product; they built confidence into our brand.",
@@ -31,20 +25,7 @@ export default function Testimonials() {
       designation: "Engineering Lead at DataPro",
       src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80",
     },
-    {
-      quote:
-        "Their sense of design and detail brought our ideas to life. The site performs beautifully and feels uniquely ours.",
-      name: "Lisa Thompson",
-      designation: "VP of Technology at FutureNet",
-      src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80",
-    },
-    {
-      quote:
-        "Beyond skill — they brought empathy, creativity, and passion. Our digital identity now truly reflects who we are.",
-      name: "David Lee",
-      designation: "Founder at BrightWave Media",
-      src: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=500&q=80",
-    },
+    
   ];
 
   const cardVariants = {
@@ -74,7 +55,7 @@ export default function Testimonials() {
       className="w-full bg-gradient-to-b from-white via-white to-gray-50 py-20 px-6 overflow-hidden"
     >
       {/* Section Heading */}
-      <div className="max-w-6xl mx-auto text-center mb-16">
+      <div  className="max-w-6xl mx-auto text-center mb-16">
         <motion.h2
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +101,7 @@ export default function Testimonials() {
               y: -6,
               transition: { type: "spring", stiffness: 100, damping: 12 },
             }}
-            className="relative bg-white border border-transparent rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500"
+            className="relative bg-white border border-transparent rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-700"
             style={{
               background:
                 "linear-gradient(white, white) padding-box, linear-gradient(to right, #06b6d4, #ec4899) border-box",
@@ -137,7 +118,7 @@ export default function Testimonials() {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.9, ease: "easeOut" }}
+              transition={{ delay: 0.3, duration: 0.3, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.3 }}
               className="italic text-gray-700 text-sm md:text-base mb-4 leading-relaxed"
             >

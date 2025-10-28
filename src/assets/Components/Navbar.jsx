@@ -46,14 +46,14 @@ export default function Navbar() {
     >
       <div className="flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-1">
+        <div className="flex cursor-pointer items-center gap-1">
           <img
             src={Logo}
             alt="Logo"
-            className="h-6 sm:h-8 md:h-10 w-auto cursor-cell"
+            className="h-6 sm:h-8 md:h-10 w-auto "
           />
           <span
-            className="cursor-help text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-pink-500"
+            className=" text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-pink-500"
             style={{ fontFamily: "Dancing Script, cursive" }}
           >
             uWs
@@ -138,16 +138,37 @@ export default function Navbar() {
                   <motion.a
                     href="#Mission"
                     variants={itemVariants}
-                    className="block text-sm text-white/80 hover:text-white hover:scale-105 transition-transform cursor-pointer"
+                    className="block mb-3 text-sm text-white/80 hover:text-white hover:scale-105 transition-transform cursor-pointer"
                   >
                     Our Mission
                   </motion.a>
                   <motion.a
                     href="#Team"
                     variants={itemVariants}
-                    className="block text-sm text-white/80 hover:text-white hover:scale-105 transition-transform cursor-pointer"
+                    className="block mb-3 text-sm text-white/80 hover:text-white hover:scale-105 transition-transform cursor-pointer"
                   >
                     Meet our experts
+                  </motion.a>
+                  <motion.a
+                    href="#Testimonials"
+                    variants={itemVariants}
+                    className="block mb-3 text-sm text-white/80 hover:text-white hover:scale-105 transition-transform cursor-pointer"
+                  >
+                    Testimonials
+                  </motion.a>
+                  <motion.a
+                    href="#Process"
+                    variants={itemVariants}
+                    className="block mb-3 text-sm text-white/80 hover:text-white hover:scale-105 transition-transform cursor-pointer"
+                  >
+                    Our Process
+                  </motion.a>
+                  <motion.a
+                    href="#FAQ"
+                    variants={itemVariants}
+                    className="block  text-sm text-white/80 hover:text-white hover:scale-105 transition-transform cursor-pointer"
+                  >
+                    FAQ's
                   </motion.a>
                 </motion.div>
               )}
@@ -162,7 +183,7 @@ export default function Navbar() {
             </a>
           </li>
           <a
-            href="#"
+            href="#Contact"
             className="ml-4 w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-r from-cyan-400 to-pink-400 shadow-lg hover:shadow-2xl hover:scale-110 transition-transform text-black"
           >
             <FaPhone />
@@ -344,6 +365,32 @@ export default function Navbar() {
                           Meet our experts
                         </a>
                       </li>
+                      <li>
+                        <a
+                          href="#Testimonials"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          Testimonial
+                        </a>
+                      </li> 
+                      <li>
+                        <a
+                          href="#Process"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          Our Process
+                        </a>
+                      </li> <li>
+                        <a
+                          href="#FAQ"
+                          onClick={() => setMobileOpen(false)}
+                          className="hover:text-cyan-400"
+                        >
+                          FAQ's
+                        </a>
+                      </li> 
                     </motion.ul>
                   )}
                 </AnimatePresence>
@@ -359,11 +406,11 @@ export default function Navbar() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#Contact"
                   onClick={() => setMobileOpen(false)}
                   className="w-full py-3 rounded-full flex items-center justify-center bg-gradient-to-r from-cyan-400 to-pink-400 shadow-lg hover:scale-105 text-black font-semibold transition"
                 >
-                  <FaPhone /> Call Now
+                   Call Now
                 </a>
               </li>
             </ul>
