@@ -72,7 +72,7 @@ function ServiceCard({ service, index }) {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.2 }}
-      className="cursor-pointer group relative bg-gradient-to-b from-[#0e0f1a]/70 via-[#141628]/80 to-[#1c1f36]/70 
+      className="cursor-pointer group relative bg-gradient-to-br from-black/40 to-white/2 backdrop-blur-md rounded-2xl p-6 shadow-2xl
                  border border-white/10 hover:border-blue-400/50
                  backdrop-blur-2xl transition-all duration-300 
                  rounded-2xl p-6 shadow-lg hover:shadow-blue-500/30 
@@ -103,12 +103,13 @@ function ServiceCard({ service, index }) {
 
       {/* Link */}
       <a href="#Contact">
-      <motion.span
-        whileHover={{ x: 6 }}
-        className="relative text-sm text-blue-400 underline underline-offset-4 cursor-pointer group-hover:text-pink-400 transition-all duration-300"
-      >
-        Learn More →
-      </motion.span></a>
+        <motion.span
+          whileHover={{ x: 6 }}
+          className="relative text-sm text-blue-400 underline underline-offset-4 cursor-pointer group-hover:text-pink-400 transition-all duration-300"
+        >
+          Learn More →
+        </motion.span>
+      </a>
     </motion.div>
   );
 }
@@ -118,21 +119,9 @@ export default function Services() {
   return (
     <section
       id="Services"
-      className="relative min-h-screen bg-gradient-to-br from-[#0e0f1a] via-[#141628] to-[#1c1f36]
-                 text-white py-24 px-6 flex flex-col items-center overflow-hidden"
+      className="relative min-h-screen bg-[url('https://static.vecteezy.com/system/resources/previews/017/114/508/original/abstract-yellow-purple-background-landscape-banner-free-vector.jpg')] bg-top bg-cover 
+             opacity-95    text-white py-24 px-6 flex flex-col items-center justify-between overflow-hidden "
     >
-      {/* Background Glow Orbs */}
-      <motion.div
-        animate={{ y: [0, -25, 0] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-16 left-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"
-      ></motion.div>
-      <motion.div
-        animate={{ y: [0, 25, 0] }}
-        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-20 right-16 w-52 h-52 bg-pink-400/10 rounded-full blur-3xl"
-      ></motion.div>
-
       {/* Section Title */}
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
@@ -148,7 +137,7 @@ export default function Services() {
       </motion.h2>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-7xl relative z-10">
+      <div className="grid grid-cols-1 top-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-7xl relative z-10 ">
         {servicesData.map((service, i) => (
           <ServiceCard key={service.id} service={service} index={i} />
         ))}

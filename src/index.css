@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Orbitron:wght@700&display=swap');
 
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 2s step-start infinite;
+}
+
+
 html {
   /* scroll-padding-top: 90px;  */
   scroll-behavior: smooth;

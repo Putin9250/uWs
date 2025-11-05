@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import Logo from "../SVG/4.svg";
+import Logo from "../Photos/Logo2.png";
+
 
 import {
   FaGithub,
@@ -54,7 +55,7 @@ export default function Footer() {
             <img
               src={Logo}
               alt="Logo"
-              className="h-6 sm:h-8 md:h-10 w-auto cursor-cell"
+              className="h-6 sm:h-8 md:h-10 w-auto cursor-pointer rounded-full"
             />
             <span
               className="cursor-help text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-pink-500"
@@ -71,14 +72,14 @@ export default function Footer() {
             <a href="#" className="hover:text-blue-400 transition-colors">
               <FaGithub size={18} />
             </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
+            <a href="https://www.linkedin.com/company/uttam-web-solution/" className="hover:text-blue-400 transition-colors">
               <FaLinkedin size={18} />
             </a>
             <a href="#" className="hover:text-blue-400 transition-colors">
               <FaInstagram size={18} />
             </a>
             <a
-              href="mailto:contact@yourbrand.com"
+              href="mailto:uttamwebsolution@gmail.com"
               className="hover:text-blue-400 transition-colors"
             >
               <FaEnvelope size={18} />
@@ -147,7 +148,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3 text-sm text-gray-400">
-            <FaEnvelope className="text-blue-400" /> sahil24042005@gmail.com
+            <FaEnvelope className="text-blue-400" /> uttamwebsolution@gmail.com
           </div>
 
           <div className="flex items-start gap-3 text-sm text-gray-400">

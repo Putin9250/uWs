@@ -12,28 +12,24 @@ export default function Team() {
       role: "Head Director",
       desc: "Guiding vision and innovation with creative precision and strategic clarity.",
       img: Photo7,
-      
     },
     {
       name: "MD Shahrukh",
       role: "Full Stack Developer",
       desc: "Bringing life to ideas through efficient backend logic and dynamic frontends.",
       img: Photo8,
-      
     },
     {
       name: "Deepanshu Jain",
       role: "WordPress Developer",
       desc: "Building smooth, SEO-friendly WordPress sites that convert visitors into clients.",
       img: Photo9,
-      
     },
     {
       name: "Deeksha Sharma",
       role: "UI/UX & Graphic Designer",
       desc: "Designing emotions into pixels — making user experiences delightful and human.",
       img: Photo10,
-      
     },
   ];
 
@@ -53,14 +49,8 @@ export default function Team() {
   return (
     <section
       id="team"
-      className="relative min-h-[60vh] py-16 px-6 md:px-12 bg-gradient-to-b from-[#0e0f1a] via-[#141628] to-[#1c1f36] text-white overflow-hidden"
+      className="relative min-h-[60vh] py-16 px-6 md:px-12 bg-[url('https://marketplace.canva.com/MADarLO44xw/1/screen_2x/canva-business-team-solving-puzzle-MADarLO44xw.jpg')] bg-cover bg-center opacity-90 text-white overflow-hidden"
     >
-      {/* background glow */}
-      <div className="absolute inset-0">
-        <div className="absolute w-72 h-72 bg-blue-500/10 blur-3xl rounded-full top-10 left-10" />
-        <div className="absolute w-80 h-80 bg-pink-500/10 blur-3xl rounded-full bottom-10 right-10" />
-      </div>
-
       {/* heading */}
       <motion.div
         variants={slideVariant("up")}
@@ -94,7 +84,7 @@ export default function Team() {
               scale: 1.05,
               transition: { duration: 0.3, ease: "easeOut" },
             }}
-            className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center backdrop-blur-md hover:border-blue-400/40 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-200"
+            className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center backdrop-blur-md hover:border-blue-400/40 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-200 "
           >
             <img
               src={member.img}

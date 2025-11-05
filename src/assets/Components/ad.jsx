@@ -23,7 +23,7 @@ export default function AdSection() {
             Grow Your Business with <br /> Digital Precision & Creative Power
           </h2>
 
-          <p className="text-gray-600 text-base sm:text-lg mb-8 max-w-lg mx-auto lg:mx-0">
+          <p className="text-gray-600  text-base sm:text-lg mb-8 max-w-lg mx-auto lg:mx-0">
             We help brands evolve — through smart web strategies, engaging
             design, and performance-driven marketing. From startups to
             enterprises, we build growth that lasts.

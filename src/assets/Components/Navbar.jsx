@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../SVG/4.svg";
+import Logo from "../Photos/Logo2.png";
 import MenuOpen from "../SVG/7.svg";
 import MenuClose from "../SVG/6.svg";
 import {
@@ -50,7 +50,7 @@ export default function Navbar() {
           <img
             src={Logo}
             alt="Logo"
-            className="h-6 sm:h-8 md:h-10 w-auto "
+            className="h-6 sm:h-8 md:h-10 w-auto rounded-full"
           />
           <span
             className=" text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-pink-500"

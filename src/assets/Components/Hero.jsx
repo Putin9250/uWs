@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import ComputerSVG from "../SVG/conputer.svg";
 
 export default function Hero() {
   return (
     <section
-      className="relative  min-h-[100vh] flex flex-col items-center justify-center bg-gradient-to-br from-[#0e0f1a] via-[#141628] to-[#1c1f36] text-white overflow-hidden px-4 pt-20 md:pt-0"
+      className="relative  min-h-[100vh] flex flex-col items-center justify-center bg-[url('/src/assets/Photos/777.png')] bg-cover bg-center opacity-90 h-screen text-white overflow-hidden px-4 pt-20 md:pt-0"
       id="Home"
     >
       {/* Floating Computer */}
@@ -47,19 +46,6 @@ export default function Hero() {
           <circle cx="360" cy="40" r="4" fill="#60a5fa" />
         </svg>
       </motion.div>
-      <motion.img
-        src={ComputerSVG}
-        alt="Floating Computer"
-        animate={{ y: [0, -15, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="
-    w-[220px] sm:w-[260px] md:w-[280px] lg:w-[360px]
-    opacity-80 mb-6 md:mb-0 
-    absolute top-25 left-1/2 -translate-x-1/2  /* default for small screens */
-    md:top-auto md:bottom-[0%] md:left-[2%] md:-translate-x-0  /* reset for md+ screens */
-    lg:left-[2%] sm:to-15%
-  "
-      />
 
       {/* Rising Graph */}
       <motion.svg
@@ -111,11 +97,15 @@ export default function Hero() {
             damping: 15,
           }}
           viewport={{ once: false, amount: 0.3 }}
-          className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-3"
+          className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-3  "
+          style={{ fontFamily: "Dancing Script, cursive" }}
         >
           We Build <span className="text-blue-400">Digital Growth</span> That
           Lasts
+          <span className="blink">|</span>
+          
         </motion.h1>
+
 
         <motion.p
           initial={{ opacity: 0, y: 40 }}
@@ -127,7 +117,7 @@ export default function Hero() {
             damping: 15,
           }}
           viewport={{ once: false, amount: 0.3 }}
-          className="text-white/80 text-sm sm:text-base mb-6 sm:mb-8"
+          className="text-white text-sm font-['Anonymous_Pro'] font-bold sm:text-base mb-6 sm:mb-8"
         >
           From website design to brand strategy — we craft meaningful digital
           experiences that help your business stand tall in the modern world.
@@ -135,70 +125,70 @@ export default function Hero() {
 
         {/* Buttons */}
         <motion.div
-  initial={{ y: 60, opacity: 0 }}                // Start slightly below
-  whileInView={{ y: 0, opacity: 1 }}             // Slide upward & fade in
-  transition={{ duration: 0.8, ease: "easeOut" }} // Smooth motion
-  viewport={{ once: false, amount: 0.3 }}         // Triggers on scroll each time
-  className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-6 sm:mb-10"
-><a href="#Started">
-  <motion.button
-    whileHover={{ scale: 1.08 }}
-    whileTap={{ scale: 0.96 }}
-    className="bg-blue-500 cursor-pointer hover:bg-blue-600 transition-all duration-300 text-white rounded-full px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-lg shadow-lg"
-  >
-    Get Started
-  </motion.button>
-</a>
-<a href="#PortFolio">
-  <motion.button
-    whileHover={{ scale: 1.08 }}
-    whileTap={{ scale: 0.96 }}
-    className="border cursor-pointer border-white/40 text-white hover:bg-white/10 transition-all duration-300 rounded-full px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-lg shadow-lg"
-  >
-    View Work
-  </motion.button>
-  </a>
-</motion.div>
-
+          initial={{ y: 60, opacity: 0 }} // Start slightly below
+          whileInView={{ y: 0, opacity: 1 }} // Slide upward & fade in
+          transition={{ duration: 0.8, ease: "easeOut" }} // Smooth motion
+          viewport={{ once: false, amount: 0.3 }} // Triggers on scroll each time
+          className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-6 sm:mb-10"
+        >
+          <a href="#Started">
+            <motion.button
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.96 }}
+              className="bg-blue-500 cursor-pointer hover:bg-blue-600 transition-all duration-300 text-white rounded-full px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-lg shadow-lg"
+            >
+              Get Started
+            </motion.button>
+          </a>
+          <a href="#PortFolio">
+            <motion.button
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.96 }}
+              className="border cursor-pointer border-white/40 text-white hover:bg-white/10 transition-all duration-300 rounded-full px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-lg shadow-lg"
+            >
+              View Work
+            </motion.button>
+          </a>
+        </motion.div>
 
         {/* Quick Highlights */}
         <motion.div
-  initial={{ y: 40, opacity: 0 }}                 // Start slightly below
-  whileInView={{ y: 0, opacity: 1 }}              // Rise into view
-  transition={{ duration: 0.8, ease: "easeOut" }} // Smooth motion
-  viewport={{ once: false, amount: 0.3 }}         // Trigger while scrolling
-  className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white/70 text-xs sm:text-sm md:text-base"
->
-  {[
-    { number: "50+", label: "Projects" },
-    { number: "100%", label: "Client Trust" },
-    { number: "24/7", label: "Support" },
-  ].map((item, index) => (
-    <motion.div
-      key={index}
-      initial={{ y: 30, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.2, // ✨ each one follows the other slightly
-        ease: "easeOut",
-      }}
-      viewport={{ once: false, amount: 0.3 }}
-      className="flex flex-col items-center sm:items-start"
-    >
-      <span className="text-blue-400 text-lg sm:text-xl font-semibold">
-        {item.number}
-      </span>
-      {item.label}
-    </motion.div>
-  ))}
-</motion.div>
-
+          initial={{ y: 40, opacity: 0 }} // Start slightly below
+          whileInView={{ y: 0, opacity: 1 }} // Rise into view
+          transition={{ duration: 0.8, ease: "easeOut" }} // Smooth motion
+          viewport={{ once: false, amount: 0.3 }} // Trigger while scrolling
+          className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white font-black text-xs sm:text-sm md:text-base"
+        >
+          {[
+            { number: "50+", label: "Projects" },
+            { number: "100%", label: "Client Trust" },
+            { number: "24/7", label: "Support" },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.2, // ✨ each one follows the other slightly
+                ease: "easeOut",
+              }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="flex flex-col items-center sm:items-start"
+            >
+              <span className="text-white text-lg sm:text-xl md:text-xl font-semibold">
+                <center>
+                {item.number}<br />
+              {item.label}
+                </center>
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
 
       {/* Scroll Indicator */}
       <motion.div
-      
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
         className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/50 text-xs sm:text-sm cursor-pointer"

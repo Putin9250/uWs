@@ -73,7 +73,7 @@ export default function Contact() {
           <div className="space-y-4 text-gray-700">
             <p className="flex items-center justify-center lg:justify-start gap-3">
               <FaEnvelope className="text-cyan-500 text-xl" />
-              <span>sahil24042005@gmail.com</span>
+              <span>uttamwebsolution@gmail.com</span>
             </p>
             <p className="flex items-center justify-center lg:justify-start gap-3">
               <FaPhoneAlt className="text-pink-500 text-xl" />
@@ -86,7 +86,7 @@ export default function Contact() {
           </div>
           <div className="flex items-center justify-center gap-6 mt-8">
       <a
-        href="https://www.linkedin.com/"
+        href="https://www.linkedin.com/company/uttam-web-solution/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-inherit"
@@ -102,21 +102,14 @@ export default function Contact() {
         <FaInstagram size={28} />
       </a>
       <a
-        href="https://x.com/"
+        href="https://x.com/uWs_offical"
         target="_blank"
         rel="noopener noreferrer"
         className="text-inherit"
       >
         <FaXTwitter size={28} />
       </a>
-      <a
-        href="https://www.youtube.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-inherit"
-      >
-        <FaYoutube size={28} />
-      </a>
+      
     </div>
         </motion.div>
 

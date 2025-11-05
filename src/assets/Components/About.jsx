@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="mission" className=" bg-gradient-to-br from-[#0e0f1a] via-[#141628] to-[#1c1f36] text-white py-16 px-6 md:px-12 lg:px-20">
+    <section id="mission" className=" bg-[url('https://marketplace.canva.com/s1aPw/MAEHqms1aPw/1/s2/canva-vision-mission-puzzle-MAEHqms1aPw.jpg')] opacity-99 bg-cover bg-center text-white py-16 px-6 md:px-12 lg:px-20">
       {/* Page container */}
       
       <div  className="max-w-7xl mx-auto">
@@ -25,7 +25,7 @@ export default function About() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="mt-4 text-white/80 max-w-3xl"
+            className="mt-4 text-gray-700 font-mono max-w-3xl"
           >
             Gentle as a tide and deliberate as architecture — we build websites
             and brands that carry meaning, measure impact, and stand patient
