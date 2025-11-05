@@ -4,6 +4,7 @@ import Photo7 from "../Photos/7.jpeg";
 import Photo8 from "../Photos/8.jpeg";
 import Photo9 from "../Photos/9.jpeg";
 import Photo10 from "../Photos/10.jpeg";
+import Video from "../Photos/art.mp4"
 
 export default function Team() {
   const members = [
@@ -49,8 +50,22 @@ export default function Team() {
   return (
     <section
       id="team"
-      className="relative min-h-[60vh] py-16 px-6 md:px-12 bg-[url('https://marketplace.canva.com/MADarLO44xw/1/screen_2x/canva-business-team-solving-puzzle-MADarLO44xw.jpg')] bg-cover bg-center opacity-90 text-white overflow-hidden"
+      className="relative min-h-[60vh] py-16 px-6 md:px-12 
+     opacity-90 text-white overflow-hidden"
+     
     >
+       <video
+    className="absolute inset-0 w-full h-full object-cover"
+    preload="none"
+    src={Video}
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+   {/* Optional dark overlay for better readability */}
+  <div className="absolute inset-0 bg-black/40"></div>
+
       {/* heading */}
       <motion.div
         variants={slideVariant("up")}

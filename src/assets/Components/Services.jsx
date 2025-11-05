@@ -9,6 +9,8 @@ import {
   FaSearch,
   FaMapMarkedAlt,
 } from "react-icons/fa";
+import Video from "../Photos/video2.mp4"
+
 
 // Services Data
 const servicesData = [
@@ -119,16 +121,27 @@ export default function Services() {
   return (
     <section
       id="Services"
-      className="relative min-h-screen bg-[url('https://static.vecteezy.com/system/resources/previews/017/114/508/original/abstract-yellow-purple-background-landscape-banner-free-vector.jpg')] bg-top bg-cover 
-             opacity-95    text-white py-24 px-6 flex flex-col items-center justify-between overflow-hidden "
+      className="relative min-h-screen  text-white py-24 px-6 flex flex-col items-center justify-between overflow-hidden "
     >
+       <video
+          className="absolute inset-0 w-full h-full object-cover"
+          preload="none"
+          src={Video}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+         {/* Optional dark overlay for better readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      
       {/* Section Title */}
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: false }}
-        className="text-4xl md:text-5xl font-bold text-white mb-3"
+        className="text-4xl md:text-5xl font-bold text-white mb-3 z-20"
       >
         Our{" "}
         <span className="text-4xl md:text-5xl font-bold text-blue-400 mb-3">
