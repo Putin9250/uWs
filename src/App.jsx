@@ -10,43 +10,24 @@ import Contact from "./assets/Components/Contact";
 import Process from "./assets/Components/Process";
 import FAQ from "./assets/Components/FAQ";
 import Footer from "./assets/Components/Footer";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Landing from "./assets/Components/LandingPage";
+import Pricing from "./assets/Components/Pricing/Components/Pricing";
+import ScrollToTop from "./assets/Components/ScrollToTop";
+
 
 function App() {
-
   return (
     <>
-      <Navbar />
-      <Hero />
-      <AdSection />
-      <About />
-      <Testimonials />
-      <Services />
-      <Portfolio />
-      <Team />
-      <Contact />
-      <Process />
-      <FAQ />
-      <Footer />
-      {/* Test Sections */}
-       {/* <div id="" className="h-screen bg-purple-600 flex items-center justify-center">
-        <h1 className="text-white text-4xl font-bold">Section 1</h1>
-      </div>
-
-      <div className="h-screen bg-green-500 flex items-center justify-center">
-        <h1 className="text-white text-4xl font-bold">Section 2</h1>
-      </div>
-
-      <div className="h-screen bg-blue-700 flex items-center justify-center">
-        <h1 className="text-white text-4xl font-bold">Section 3</h1>
-      </div>
-
-      <div className="h-screen bg-orange-400 flex items-center justify-center">
-        <h1 className="text-white text-4xl font-bold">Section 4</h1>
-      </div> 
-      <section className="h-100" ></section> */}
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/pricing" element={<Pricing />} />
+        </Routes>
     
     </>
-  )
+  );
 }
 
 export default App;

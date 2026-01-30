@@ -10,6 +10,9 @@ import {
   FaMapMarkedAlt,
 } from "react-icons/fa";
 import Video from "../Photos/video2.mp4"
+import { Link } from "react-router-dom";
+import pricing from "./Pricing/Components/Pricing"
+
 
 
 // Services Data
@@ -19,17 +22,21 @@ const servicesData = [
     icon: <FaLaptopCode />,
     title: "Web Development",
     desc: "Responsive, high-performing websites with clean UI and smooth logic.",
+    pricehref: 'http://localhost:5173/',
   },
   {
     id: "Business-Devlopment",
     icon: <FaPalette />,
     title: "UI/UX Design",
     desc: "Experiences that blend creativity, clarity, and intuitive interaction.",
+    pricehref: 'http://localhost:5173/',
+
   },
   {
     id: "CMS-Services",
     icon: <FaBriefcase />,
     title: "Business Development",
+    pricehref: 'http://localhost:5173/',
     desc: "Strategic partnerships and digital growth that build lasting brands.",
   },
   {
@@ -37,17 +44,22 @@ const servicesData = [
     icon: <FaWordpress />,
     title: "WordPress Development",
     desc: "Dynamic, secure, and customizable WordPress sites for every business.",
+    pricehref: 'http://localhost:5173/',
+
   },
   {
     id: "Digital-Marketing",
     icon: <FaTools />,
     title: "Site Management",
     desc: "Regular updates, backups, and optimization for seamless performance.",
+    pricehref: 'http://localhost:5173/',
+
   },
   {
     id: "SEO-LOGO",
     icon: <FaBullhorn />,
     title: "Digital Marketing",
+    pricehref: 'http://localhost:5173/',
     desc: "Campaigns powered by analytics, storytelling, and smart conversions.",
   },
   {
@@ -55,12 +67,16 @@ const servicesData = [
     icon: <FaSearch />,
     title: "SEO & Logo Design",
     desc: "Boost visibility and brand identity with refined SEO and unique design.",
+    pricehref: 'http://localhost:5173/',
+
   },
   {
     id: "SEO-LOGO",
     icon: <FaMapMarkedAlt />,
     title: "Google Maps Listing",
     desc: "Make your business visible on Google Maps with verified local SEO.",
+    pricehref: 'http://localhost:5173/',
+
   },
 ];
 
@@ -104,14 +120,14 @@ function ServiceCard({ service, index }) {
       </p>
 
       {/* Link */}
-      <a href="#Contact">
+      <Link to="/pricing">
         <motion.span
           whileHover={{ x: 6 }}
           className="relative text-sm text-blue-400 underline underline-offset-4 cursor-pointer group-hover:text-pink-400 transition-all duration-300"
         >
           Learn More →
         </motion.span>
-      </a>
+      </Link>
     </motion.div>
   );
 }
